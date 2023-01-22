@@ -1,4 +1,5 @@
 from random import sample, randint
+# from time import sleep
 
 RACK_SIZE = 3
 
@@ -7,6 +8,13 @@ SYMBOLS = {
     'B': 3,
     'C': 2,
     'W': 1
+}
+
+SYMBOL_PAYOUT = {
+    'A': 2,
+    'B': 3,
+    'C': 4,
+    'W': 10
 }
 
 
@@ -28,20 +36,31 @@ class SlotRack:
         # print(self.rack_3)
 
     def roll_slots(self):
+        print("-" * 30)
+        print("Rolling slots ", end="")
+        for _ in range(5):
+            # sleep(1)
+            print(". ", end="")
+        print()
+        print("-" * 30)
+
         reel_size = len(self.rack_1)
         for row in range(len(self.rack)):
             start = randint(0, reel_size - 1)
             for pos in range(3):
                 self.rack[row][pos] = self.rack_1[(start + pos) % reel_size]
 
-        # print(self.rack)
         # Transpose Rack for vertical reels
         # Allows for bets to be counted horizontally
         for i in range(RACK_SIZE):
             for j in range(i + 1, RACK_SIZE):
                 self.rack[i][j], self.rack[j][i] = self.rack[j][i], self.rack[i][j]
+        # print(self.rack)
 
     def get_slot_state(self):
+        return self.rack
+
+    def __str__(self):
         rack_rows = [" | ".join(list(map(str, self.rack[0]))),
                      " | ".join(list(map(str, self.rack[1]))),
                      " | ".join(list(map(str, self.rack[2])))]
