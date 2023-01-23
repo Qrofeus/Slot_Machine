@@ -24,6 +24,7 @@ class CoinMachine:
                 user_balance = int(input("Enter your starting balance: "))
                 if 0 < user_balance <= MAX_BALANCE:
                     self.balance = user_balance
+                    # print("-" * 30)
                     break
                 else:
                     # print("Balance Out-of-Bounds")
@@ -134,7 +135,7 @@ class CoinMachine:
         if not self.line_wins:
             print("You did not win on any lines")
             return
-        print("\n>> You won on the lines:")
+        print(">> You won on the lines:")
         for line, multiplier in self.line_wins.items():
             print(f">> {line} -> Multiplier x{multiplier}")
         self.calculate_payout()

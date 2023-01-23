@@ -5,7 +5,7 @@ if __name__ == '__main__':
     slot_rack = SlotRack()
     coin_machine = CoinMachine(slot_rack)
 
-    print(f"Your current balance: {coin_machine.get_balance()} Coins\n")
+    # print(f"Your current balance: {coin_machine.get_balance()} Coins\n")
     while True:
         print("-" * 30)
         coin_machine.get_bets()

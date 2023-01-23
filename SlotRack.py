@@ -1,5 +1,5 @@
 from random import sample, randint
-# from time import sleep
+from time import sleep
 
 RACK_SIZE = 3
 
@@ -16,6 +16,24 @@ SYMBOL_PAYOUT = {
     'C': 4,
     'W': 10
 }
+
+
+def print_winning_combinations():
+    print("Winning Combinations:")
+    for symbol, multiplier in SYMBOL_PAYOUT.items():
+        print(f"{'-'.join([symbol] * 3)} : x{multiplier} Multiplier")
+    print('-' * 30)
+    display_lines()
+    print('-' * 30)
+
+
+def display_lines():
+    print("Slot Machine Layout:")
+    print("D-1 \\")
+    for row in range(RACK_SIZE):
+        print(f"L-{row+1} - ", end="")
+        print(" | ".join(["X"] * RACK_SIZE))
+    print("D-2 /")
 
 
 class SlotRack:
@@ -35,11 +53,13 @@ class SlotRack:
         self.rack_3 = sample(rack_reel, len(rack_reel))
         # print(self.rack_3)
 
+        print_winning_combinations()
+
     def roll_slots(self):
         print("-" * 30)
         print("Rolling slots ", end="")
         for _ in range(5):
-            # sleep(1)
+            sleep(1)
             print(". ", end="")
         print()
         print("-" * 30)
