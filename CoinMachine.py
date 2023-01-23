@@ -37,13 +37,12 @@ class CoinMachine:
         return self.balance
 
     def get_bets(self):
-        # Initialise all line_bets to 'no'
-        for line in self.bets.keys():
-            self.bets[line] = 'n'
-
         while True:
+            # Initialise all line_bets to 'no'
+            for line in self.bets.keys():
+                self.bets[line] = 'n'
+            count = 0
             try:
-                count = 0
                 for line in self.bets.keys():
                     # Get which lines to bet on
                     bet_on_line = input(f"Would you like to bet on {line} [y/n]: ")[0].lower()

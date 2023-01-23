@@ -1,5 +1,6 @@
 from SlotRack import SlotRack
 from CoinMachine import CoinMachine
+from time import sleep
 
 if __name__ == '__main__':
     slot_rack = SlotRack()
@@ -30,5 +31,8 @@ if __name__ == '__main__':
             continue
 
     print("-" * 30)
-    print(f"Cashing out with a balance of {coin_machine.get_balance()} Coins")
+    print(f"Cashing out ", end="")
+    for _ in range(3):
+        print(". ", end="")
+    print(f"\nYou received {coin_machine.get_balance()} Coins")
 
