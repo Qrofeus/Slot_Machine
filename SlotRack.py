@@ -1,5 +1,6 @@
 from random import sample, randint
 from time import sleep
+from os import system
 
 RACK_SIZE = 3
 
@@ -19,12 +20,14 @@ SYMBOL_PAYOUT = {
 
 
 def print_winning_combinations():
+    system('cls')
     print("Winning Combinations:")
     for symbol, multiplier in SYMBOL_PAYOUT.items():
         print(f"{'-'.join([symbol] * 3)} : x{multiplier} Multiplier")
     print('-' * 30)
     display_lines()
     print('-' * 30)
+    input("Press 'ENTER' to continue:")
 
 
 def display_lines():

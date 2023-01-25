@@ -3,6 +3,14 @@
 
 A 3 reel slot machine with 5 available betting options to be run on a console/terminal built using Python
 
+## Python Version
+
+This project is built with Python 3.9.7\
+Check your python version
+```bash
+  python --version
+```
+
 ## Play the Game
 
 Clone the project
@@ -23,12 +31,12 @@ Run main.py file using Python
   python main.py
 ```
 
+## Program Screenshots
 
-## Demo
+![](/img/Slot_Machine_demo_01.JPG)
 
-![Console run displaying "Winning Combinations" and "Machine Layout"](https://github.com/Qrofeus/Slot_Machine/blob/master/Slot_Machine_demo_01.JPG)
+![](/img/Slot_Machine_demo_02.JPG)
 
-![Console run displaying "User bets", "Rolled Slots" and winnings](https://github.com/Qrofeus/Slot_Machine/blob/master/Slot_Machine_demo_02.JPG)
 ## Changing Reel Contents and Winning Multipliers
 
 In the project directory, open **SlotRack.py** file using any text editor. 
